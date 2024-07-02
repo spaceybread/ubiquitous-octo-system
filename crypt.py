@@ -32,12 +32,14 @@ print()
 
 random.seed(timestamp)
 for i in range(10):
-    print(bin(random.randint(2**16, 2**17 - 1)))
+    r = random.randint(2**64, 2**65 - 1)
+    print(bin(r), r)
 
 print()
 
 random.seed(timestamp)
 for i in range(10):
-    print(bin(random.randint(2**16, 2**17 - 1)))
+    r = random.randint(2**64, 2**65 - 1)
+    print(bin(r), r)
 
 print()
