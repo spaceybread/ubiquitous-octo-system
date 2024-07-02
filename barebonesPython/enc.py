@@ -11,7 +11,7 @@ from colorama import Fore, Back, Style
 backend = default_backend()
 
 message = 'The Magic Words are still Squeamish Ossifrage'
-
+message = bytes(message, 'utf-8')
 # It's Bob's world and we're all living in it!
 
 bob_pem = '''
@@ -57,4 +57,16 @@ print("AES encryption key in bytes: {}".format(binascii.b2a_hex(key_enc)))
 
 IV = binascii.a2b_hex('00000000000000000000000000000000')
 
+# Encryption time!
+print(Fore.WHITE)
+C = AESGCM(key_enc)
+cipertext = C.encrypt(IV, message, bytes("", 'utf-8'))
 
+print("Ciphertext: {}".format(binascii.b2a_hex(cipertext)))
+
+final_ct = alice_pub_bytes + cipertext
+
+print(binascii.b2a_hex(final_ct))
+
+print(Fore.YELLOW)
+print(base64.b64encode(final_ct))
