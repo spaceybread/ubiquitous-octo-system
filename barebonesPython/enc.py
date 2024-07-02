@@ -10,14 +10,14 @@ from colorama import Fore, Back, Style
 
 backend = default_backend()
 
-message = 'The Magic Words are still Squeamish Ossifrage'
+message = 'It is a rainy day in Madison!'
 message = bytes(message, 'utf-8')
 # It's Bob's world and we're all living in it!
 
 bob_pem = '''
 -----BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHiG0sllsW2K9uX/Ey1nxJsv4u/1z
-28JgocZcuFcmE/BuKXZ1w5CB35VxrYqF6RKUucnaauk4VfjSAfYr6gC+GA==
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWyyVTxBznWLuQqrSqls7Rq8GzdJC
+0zn1mHc62KJDe8HBcVAziCzi3ef1Z0l/BYApv5q8xJIMwfV0WB3NT1jNrQ==
 -----END PUBLIC KEY-----'''
 
 bob_pem = bytes(bob_pem, 'utf-8')
@@ -68,5 +68,5 @@ final_ct = alice_pub_bytes + cipertext
 
 print(binascii.b2a_hex(final_ct))
 
-print(Fore.YELLOW)
+print(Fore.WHITE)
 print(base64.b64encode(final_ct))
